@@ -27,7 +27,9 @@ sample_texts = [
 
 for text in sample_texts:
     predicted_class = classify_text(text, model, tokenizer)
-    label2id = {0: "kredi", 1: "kredi kartı", 2: "atm", 3: "müşteri hizmetleri"}
+    label2id = {1: "müşteri hizmetleri", 2: "kredi başvurusu", 3: "mobil uygulama", 4: "ücretlendirme",
+        5: "atm", 6: "kredi kartı", 7: "internet bankacılığı", 8: "bilgi ve iletişim", 9: "faiz işlem",
+                10: "şube hizmeti", 11: "çağrı merkezi", 12: "para transferi", 13: "pos" }
     predicted_category = label2id[predicted_class]
     print(f"Metin: {text}")
     print(f"Tahmin: {predicted_category}\n")

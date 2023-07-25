@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from transformers import DistilBertTokenizer, DistilBertForSequenceClassification, Trainer, TrainingArguments, DataCollatorWithPadding
 from datasets import Dataset
 
-data = pd.read_csv("data/complaints.csv")
+data = pd.read_csv("data/sikayetimVar.csv")
 
 train_data, test_data = train_test_split(data, test_size=0.2, random_state=42)
 
