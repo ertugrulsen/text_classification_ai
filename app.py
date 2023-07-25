@@ -25,9 +25,9 @@ def predict():
 
     return predicted_category
 
-@app.route('/get', methods=['GET'])
-def get():
-    return "200"
+@app.route('/')
+def homepage():
+    return "Hello, This is ai service"
 
 if __name__ == '__main__':
     app.run(debug=True)
