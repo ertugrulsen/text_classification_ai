@@ -1,8 +1,8 @@
-Proje Özeti: Metin Sınıflandırma ile Şikayet Analizi
+**Proje Özeti: Metin Sınıflandırma ile Şikayet Analizi**
 
 Bu proje, bir bankanın şikayet platformuna gelen metinleri otomatik olarak sınıflandırmak için yapay zeka tabanlı bir çözüm sunmaktadır. Şikayetler, kullanıcılar tarafından kredi kartı, kredi, ATM ve müşteri hizmetleri gibi çeşitli kategorilere ayrılarak işlenir. Metin sınıflandırma modeli olarak Hugging Face tarafından sağlanan DistilBERT modeli kullanılmıştır.
 
-Projenin Ana Adımları:
+**Projenin Ana Adımları:**
 
 Veri Toplama: Banka şikayet platformundan alınan metin verileri toplanır ve kategorilere göre etiketlenir.
 Veri Ön İşleme: Metin verileri temizlenir, önişlemeye tabi tutulur ve DistilBERT modelinin anlayabileceği formata dönüştürülür.
