@@ -24,7 +24,6 @@ model, tokenizer = load_model()
 sample_texts = [
     "müşteri hizmetleri çok yavaş cevap veriyor",
     "Kredi başvurusu yaparken görevli faiz oranları ve diğer masraflar konusunda eksik bilgi verdi şeffaf olunmalı",
-    "mobil uygulamanızda düzenli olarak çökmeler ve hatalar alıyorum sorunu düzeltmelisiniz",
     "hesabımdan düzenli olarak para kayboluyor gibi görünüyor hesap aktivitelerimi incelenmesini talep ediyorum",
     "atm para çekme işlemi başarısız oldu.",
     "kredi kartımın borcu hatalı olarak gösteriliyor.",
