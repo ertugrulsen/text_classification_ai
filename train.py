@@ -5,7 +5,7 @@ from datasets import Dataset
 
 data = pd.read_csv("data/sikayetimVar.csv")
 
-train_data, test_data = train_test_split(data, test_size=0.2)
+train_data, test_data = train_test_split(data, test_size=0.2, random_state=42)
 
 model_name = "dbmdz/distilbert-base-turkish-cased"
 tokenizer = DistilBertTokenizer.from_pretrained(model_name)
@@ -24,13 +24,11 @@ model = DistilBertForSequenceClassification.from_pretrained(model_name, num_labe
 
 training_args = TrainingArguments(
     output_dir="./models",
-    num_train_epochs=5,
+    num_train_epochs=3,
     per_device_train_batch_size=16,
     per_device_eval_batch_size=16,
     warmup_steps=500,
     weight_decay=0.01,
-    learning_rate=2e-5,
-
 )
 
 data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
