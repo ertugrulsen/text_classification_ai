@@ -3,8 +3,8 @@ from transformers import DistilBertTokenizer, DistilBertForSequenceClassificatio
 
 def load_model():
     #model = DistilBertForSequenceClassification.from_pretrained("models", cache_dir="./cache")  # Model dosyaları ./cache klasörüne indirilecek
-    model = DistilBertForSequenceClassification.from_pretrained("./models")
-    tokenizer = DistilBertTokenizer.from_pretrained("dbmdz/distilbert-base-turkish-cased")  # Tokenizer dosyaları ./cache klasörüne indirilecek
+    model = DistilBertForSequenceClassification.from_pretrained("results/checkpoint-60000", cache_dir="./cache")
+    tokenizer = DistilBertTokenizer.from_pretrained("dbmdz/distilbert-base-turkish-cased", cache_dir="./cache")  # Tokenizer dosyaları ./cache klasörüne indirilecek
     return model, tokenizer
 
 
@@ -22,17 +22,17 @@ def classify_text(text, model, tokenizer):
 model, tokenizer = load_model()
 
 sample_texts = [
-    "Müşteri hizmetleri çağrı merkezine ulaşmak için karmaşık menüleri takip etmek zorunda kaldım",
-    "Kredi başvurusu için gereken belgeleri tamamladım ancak bankanızın belirttiği sürede geri dönüş alamadım",
-    "Müşteri hizmetleri temsilciniz hesap kesim tarihimi değiştirmem konusunda yardımcı oldu",
-    "Kredi başvurusu sırasında banka yetkilileri güler yüzlü ve yardımsever davrandı",
-    "Banka aracılığıyla yaptığım EFT işlemi uzun süreli gecikmelerle karşılaşıyor",
-    "Mobil uygulamanızın arayüzü şık ve basit kullanımı oldukça keyifli",
-    "Ücretlendirme politikanız müşterilere sağladığınız avantajlarla dengeli ve adil bir şekilde uygulanıyor",
-    "ATM'lerinizdeki işlem hızı oldukça hızlı bekleme süresi minimum düzeyde",
-    "POS cihazınızın işlem hızı oldukça yüksek sıra beklemeden ödeme yapabiliyorum",
-    "Şubenizdeki hizmet kalitesi memnuniyetimi sağlayacak düzeyde ve başarılıydı",
-    "Faiz işlemi sırasında hesabımdan fazla faiz kesildi iade talep ediyorum"
+    "müşteri hizmetleri çok yavaş cevap veriyor",
+    "Kredi başvurusu yaparken görevli faiz oranları ve diğer masraflar konusunda eksik bilgi verdi şeffaf olunmalı",
+    "hesabımdan düzenli olarak para kayboluyor gibi görünüyor hesap aktivitelerimi incelenmesini talep ediyorum",
+    "atm para çekme işlemi başarısız oldu.",
+    "kredi kartımın borcu hatalı olarak gösteriliyor.",
+    "internet bankacılığı sisteminiz yavaş ve karmaşık  işlem yapmak neredeyse imkansız",
+    "kredi kartı borcumu zamanında ödediğim halde faiz uygulandı  bu durumu düzeltmenizi istiyorum",
+    "banka şubesindeki görevlileriniz son derece ilgisiz ve yardımcı olmaktan uzak  sorunlarımı çözmek için saatlerimi harcadım",
+    "bankanızın çağrı merkezine defalarca ulaşmaya çalıştım ancak sürekli olarak beklemeye yönlendirildim ve kimseye bağlanamadım.",
+    "hesabımdan yanlışlıkla yapılan bir para transferi sonrasında paranın geri iadesi için neden bu kadar uzun süre bekletiliyorum?",
+    "Garanti Bankasi kredi kartimdan benim onayim olmadan web pos 1 market Istanbul aciklamali 4958.00 TL'lik bir alisveris yapilmis"
 ]
 
 for text in sample_texts:
